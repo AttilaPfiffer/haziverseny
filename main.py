@@ -1,6 +1,7 @@
 meret: int= 40
 jel = "*"
 szokoz= " "
+penz: int = 0
 
 import design
 
@@ -28,10 +29,20 @@ print("Az életerő: A harmadik helyszínváltás után elkezd csökkeni az éle
 
 enter = input("A játék kezdéséhez nyomjon egy ENTER-t!")
 
-
+design.kinezet(jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.jel_kiiras(jel, "Épület", jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.kinezet(jel, meret)
 epulet: str = str(input("Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel."))
 if "megy epulet" or "Megy epulet" or "megy épület" or "Megy épület" in epulet:
-    print("nsponge")
+    print("Elindultál az épület felé!")
+mezo: str = str(input("Napfényes mezőz állsz. Nyugatra egy hatalmas kastélyt, délre egy kutat látsz."))
+if "megy kut" or "Megy kut" or "megy kút" or "Megy kút":
+    print("Napfényes mezőn állsz, egy kút előtt. Itt van: pénz. Nyugatra egy hatalmas kastéyt látsz.")
+    penz += 1
 
 
 
