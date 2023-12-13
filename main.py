@@ -5,6 +5,8 @@ penz: int = 0
 elet: int = 5
 kulcs : int = 0
 helyszinek: int = 0
+if elet == 0:
+    print("MEGHALTÁL!")
 
 import design
 
@@ -136,7 +138,6 @@ if "megy kut" in mezo:
             design.jel_kiiras(jel, szokoz, jel, meret)
             design.kinezet(jel, meret)
             print("Elindultál a kastély felé!")
-            print("Jelenlegi pénz: " + str(penz))
         else: 
             ujra: str = str("Rossz parancsot adott meg! Adja meg ujra: ")
 
@@ -164,19 +165,80 @@ if "megy vartemplom" in varudvar:
         visszafele: str = str(input("Az utad a kastélyba vezet vissza."))
         if "megy epulet" in visszafele:
             helyszinek += 1
-            if helyszinek == 3:
+            if helyszinek >= 3:
                 elet -= 1
             design.kinezet(jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
-            design.jel_kiiras(jel, "Vártemplom (szerzetes)", jel, meret)
+            design.jel_kiiras(jel, "Kastély", jel, meret)
             design.karakterlap(jel, "Erő", elet, jel, meret)
             design.karakterlap(jel, "Pénz", penz, jel, meret)
             design.karakterlap(jel, "Kulcs", kulcs, jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
             design.kinezet(jel, meret)
+valasztasok: str = str(input("Mehetsz a kamra és az ajtó felé. "))
+if "megy ajto" in valasztasok:
+    helyszinek += 1
+    if helyszinek >= 3:
+        elet -= 1
+    design.kinezet(jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, "Ajtó", jel, meret)
+    design.karakterlap(jel, "Erő", elet, jel, meret)
+    design.karakterlap(jel, "Pénz", penz, jel, meret)
+    design.karakterlap(jel, "Kulcs", kulcs, jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.kinezet(jel, meret)
+    visszafelee: str = str(input("Ezt az ajtót nem lehet semmivel sem kinyitni! Csak a kastély fele mehetsz!"))
+    if "megy epulet" in visszafele:
+            helyszinek += 1
+            if helyszinek >= 3:
+                elet -= 1
+            design.kinezet(jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, "Kastély", jel, meret)
+            design.karakterlap(jel, "Erő", elet, jel, meret)
+            design.karakterlap(jel, "Pénz", penz, jel, meret)
+            design.karakterlap(jel, "Kulcs", kulcs, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.kinezet(jel, meret)
+    valasztasok: str = str(input("Mehetsz a kamra és az ajtó felé. "))
 
+
+elif "megy kamra" in valasztasok: 
+    kajak: str = str(input("Rengeteg ételt látsz a kamrában. Veszel fel ételt? "))
+    if "felvesz" in kajak:
+        helyszinek += 1
+        elet == 10
+        design.kinezet(jel, meret)
+        design.jel_kiiras(jel, szokoz, jel, meret)
+        design.jel_kiiras(jel, szokoz, jel, meret)
+        design.jel_kiiras(jel, "Kamra", jel, meret)
+        design.karakterlap(jel, "Erő", elet, jel, meret)
+        design.karakterlap(jel, "Pénz", penz, jel, meret)
+        design.karakterlap(jel, "Kulcs", kulcs, jel, meret)
+        design.jel_kiiras(jel, szokoz, jel, meret)
+        design.jel_kiiras(jel, szokoz, jel, meret)
+        design.kinezet(jel, meret)
+        kamra: str = str (input("A kamrában vagy. Egyik oldalon hatalmas asztal áll mindenféle ételekkel, a másik oldalon egy nagy tűzhely, szintén ételekkel. Délre egy faajtót látsz."))
+        if "megy faajto" in kamra and kulcs == 1:
+            nyeres: str = str(input("Használod a kulcsot? (Igen/Nem)"))
+            if "Igen" or "Nem" in nyeres:
+                design.kinezet(jel, meret)
+                design.jel_kiiras(jel, szokoz, jel, meret)
+                design.jel_kiiras(jel, szokoz, jel, meret)
+                design.jel_kiiras(jel, "NYERTÉL!", jel, meret)
+                design.jel_kiiras(jel, szokoz, jel, meret)
+                design.jel_kiiras(jel, szokoz, jel, meret)
+                design.kinezet(jel, meret)
+
+
+    
 
 
     
