@@ -143,7 +143,7 @@ if "megy kut" in mezo:
 varudvar: str = str(input("A várudvaron állsz. Nyugatra nyitott kamrát, északra zárt ajtót látsz. Egy széles lépcő vezet fel a vártemplomhoz."))
 if "megy vartemplom" in varudvar:
     helyszinek += 1
-    if helyszinek == 3:
+    if helyszinek >= 3:
         elet -= 1
     design.kinezet(jel, meret)
     design.jel_kiiras(jel, szokoz, jel, meret)
@@ -160,9 +160,24 @@ if "megy vartemplom" in varudvar:
     if "felvesz" in kulcs_vetel:
         penz -= 1
         kulcs += 1
-        print("Jelenlegi pénz: " + str(penz))
-        print("Kulcsok mennyisége: " + str(kulcs))
         print("Megvetted a kulcsot a szerzetestől!")
+        visszafele: str = str(input("Az utad a kastélyba vezet vissza."))
+        if "megy epulet" in visszafele:
+            helyszinek += 1
+            if helyszinek == 3:
+                elet -= 1
+            design.kinezet(jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, "Vártemplom (szerzetes)", jel, meret)
+            design.karakterlap(jel, "Erő", elet, jel, meret)
+            design.karakterlap(jel, "Pénz", penz, jel, meret)
+            design.karakterlap(jel, "Kulcs", kulcs, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.kinezet(jel, meret)
+
+
 
     
 
