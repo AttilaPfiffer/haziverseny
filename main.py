@@ -105,7 +105,9 @@ design.kinezet(jel, meret)
 
 
 mezo: str = str(input("Napfényes mezőn állsz. Nyugatra egy hatalmas kastélyt, délre egy kutat látsz."))
-if "megy kut" in mezo:
+if "megy del" in mezo:
+    if elet == 0:
+        print("MEGHALTÁL!")
     design.kinezet(jel, meret)
     design.jel_kiiras(jel, szokoz, jel, meret)
     design.jel_kiiras(jel, szokoz, jel, meret)
@@ -127,6 +129,8 @@ if "megy kut" in mezo:
             helyszinek += 1
             if helyszinek == 3:
                 elet -= 1
+            if elet == 0:
+                print("MEGHALTÁL!")
             design.kinezet(jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
@@ -146,6 +150,8 @@ if "megy vartemplom" in varudvar:
     helyszinek += 1
     if helyszinek >= 3:
         elet -= 1
+    if elet == 0:
+        print("MEGHALTÁL!")
     design.kinezet(jel, meret)
     design.jel_kiiras(jel, szokoz, jel, meret)
     design.jel_kiiras(jel, szokoz, jel, meret)
@@ -167,6 +173,8 @@ if "megy vartemplom" in varudvar:
             helyszinek += 1
             if helyszinek >= 3:
                 elet -= 1
+            if elet == 0:
+                print("MEGHALTÁL!")
             design.kinezet(jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
@@ -182,6 +190,8 @@ if "megy ajto" in valasztasok:
     helyszinek += 1
     if helyszinek >= 3:
         elet -= 1
+    if elet == 0:
+        print("MEGHALTÁL!")
     design.kinezet(jel, meret)
     design.jel_kiiras(jel, szokoz, jel, meret)
     design.jel_kiiras(jel, szokoz, jel, meret)
@@ -197,6 +207,8 @@ if "megy ajto" in valasztasok:
             helyszinek += 1
             if helyszinek >= 3:
                 elet -= 1
+            if elet == 0:
+                print("MEGHALTÁL!")
             design.kinezet(jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
             design.jel_kiiras(jel, szokoz, jel, meret)
