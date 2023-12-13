@@ -2,32 +2,16 @@ meret: int= 40
 jel = "*"
 szokoz= " "
 penz: int = 0
+elet: int = 5
+kulcs : int = 0
 
 import design
 
-design.kinezet(jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Mező", jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.kinezet(jel, meret)
 
-design.kinezet(jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Kút", jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.kinezet(jel, meret)
 
-design.kinezet(jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Kastély", jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.kinezet(jel, meret)
+
+
+
 
 design.kinezet(jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
@@ -40,7 +24,7 @@ design.kinezet(jel, meret)
 design.kinezet(jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Ajó", jel, meret)
+design.jel_kiiras(jel, "Ajtó", jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.kinezet(jel, meret)
@@ -48,7 +32,7 @@ design.kinezet(jel, meret)
 design.kinezet(jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Szerzetes", jel, meret)
+design.jel_kiiras(jel, "Vártemplom (szerzetes)", jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.kinezet(jel, meret)
@@ -84,17 +68,71 @@ enter = input("A játék kezdéséhez nyomjon egy ENTER-t!")
 design.kinezet(jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Épület", jel, meret)
+design.jel_kiiras(jel, "Mező", jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.kinezet(jel, meret)
 epulet: str = str(input("Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel."))
-if "megy epulet" or "Megy epulet" or "megy épület" or "Megy épület" in epulet:
+if "megy epulet" in epulet:
     print("Elindultál az épület felé!")
-mezo: str = str(input("Napfényes mezőz állsz. Nyugatra egy hatalmas kastélyt, délre egy kutat látsz."))
-if "megy kut" or "Megy kut" or "megy kút" or "Megy kút":
+
+design.kinezet(jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.jel_kiiras(jel, "Mező", jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.jel_kiiras(jel, szokoz, jel, meret)
+design.kinezet(jel, meret)
+
+
+
+mezo: str = str(input("Napfényes mezőn állsz. Nyugatra egy hatalmas kastélyt, délre egy kutat látsz."))
+if "megy kut" in mezo:
+    design.kinezet(jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, "Kút", jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.kinezet(jel, meret)
     print("Napfényes mezőn állsz, egy kút előtt. Itt van: pénz. Nyugatra egy hatalmas kastéyt látsz.")
-    penz += 1
+    penz_felvetel: str = str(input("Felveszed a pénzt?"))
+    if "felvesz" in penz_felvetel:
+        penz += 1
+        print("Jelenlegi pénz: " + str(penz))
+        epulet1: str = str(input("Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel."))
+        if "megy epulet" in epulet1:
+            design.kinezet(jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, "Kastély", jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.jel_kiiras(jel, szokoz, jel, meret)
+            design.kinezet(jel, meret)
+            print("Elindultál a kastély felé!")
+        else: 
+            ujra: str = str("Rossz parancsot adott meg! Adja meg ujra: ")
+
+varudvar: str = str(input("A várudvaron állsz. Nyugatra nyitott kamrát, északra zárt ajtót látsz. Egy széles lépcő vezet fel a vártemplomhoz."))
+if "megy vartemplom" in varudvar:
+    design.kinezet(jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, "Vártemplom (szerzetes)", jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.jel_kiiras(jel, szokoz, jel, meret)
+    design.kinezet(jel, meret)
+    print("A templom előtt egy kéregető szerzetes mosolyog rád. Nyugatra nyitott kamrát, északra zárt ajtót látsz.")
+    kulcs_vetel: str = str(input("Van lehetőség kulcsot felvenni a szerzetestől, de ez 1 pénzbe kerül. "))
+    if "felvesz" in kulcs_vetel:
+        penz -= 1
+        kulcs += 1
+        print("Jelenlegi pénz: " + str(penz))
+        print("Kulcsok mennyisége: " + str(kulcs))
+        print("Megvetted a kulcsot a szerzetestől!")
+
+    
+
 
 
 
