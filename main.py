@@ -2,14 +2,16 @@ meret: int= 40
 jel = "*"
 szokoz= " "
 penz: int = 0
+elet: int= 5
+kulcs: int= 0
 
 import design
-
 design.kinezet(jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Mező", jel, meret)
-design.jel_kiiras(jel, szokoz, jel, meret)
+design.jel_kiiras(jel, "Karakterlap", jel, meret)
+design.karakterlap(jel, "Pénz", penz, jel, meret)
+design.karakterlap(jel, "Erő", elet, jel, meret)
+design.karakterlap(jel, "Kulcs", kulcs, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.kinezet(jel, meret)
 
@@ -84,7 +86,7 @@ enter = input("A játék kezdéséhez nyomjon egy ENTER-t!")
 design.kinezet(jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
-design.jel_kiiras(jel, "Épület", jel, meret)
+design.jel_kiiras(jel, "Mező", jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.jel_kiiras(jel, szokoz, jel, meret)
 design.kinezet(jel, meret)
