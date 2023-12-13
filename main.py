@@ -31,7 +31,7 @@ enter = input("A játék kezdéséhez nyomjon egy ENTER-t!")
 
 epulet: str = str(input("Egy óriási mezőn vagy. Nyugat felé egy hatalmas épület körvonalai tűnnek fel."))
 if "megy epulet" or "Megy epulet" or "megy épület" or "Megy épület" in epulet:
-    
+    print("nsponge")
 
 
 
